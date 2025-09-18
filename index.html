@@ -5,179 +5,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unknown IITians: Conquer the Qualifier</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-gray: #ecf0f1;
+            --dark-gray: #34495e;
+            --background-color: #f7f9fb;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background-color: var(--background-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
+
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 2em auto;
+            background-color: var(--white);
+            padding: 2em 3em;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--secondary-color);
         }
+
         h1, h2, h3 {
-            color: #1a237e;
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
             line-height: 1.3;
         }
+
         h1 {
             text-align: center;
-            border-bottom: 2px solid #3949ab;
-            padding-bottom: 10px;
-            margin-bottom: 1em;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: var(--primary-color);
         }
+
         h2 {
-            border-bottom: 1px solid #c5cae9;
-            padding-bottom: 8px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
             margin-top: 2em;
         }
+        
+        h3 {
+            font-size: 1.4em;
+            color: var(--secondary-color);
+            margin-top: 1.5em;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
             font-size: 1em;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
         }
+
         th, td {
             text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
+            padding: 16px;
         }
-        th {
-            background-color: #3949ab;
-            color: white;
+
+        thead th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 700;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        
+        tbody tr {
+            border-bottom: 1px solid var(--light-gray);
         }
-        tr:hover {
-            background-color: #e8eaf6;
+
+        tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa;
         }
-        .button {
-            display: block;
-            width: fit-content;
-            margin: 2em auto;
-            background-color: #d32f2f;
-            color: white;
-            padding: 14px 25px;
+        
+        tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .button-wrapper {
             text-align: center;
+            margin: 2.5em 0;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-color), #c0392b);
+            color: var(--white);
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            font-size: 1.2em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
         }
+
         .button:hover {
-            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(231, 76, 60, 0.5);
         }
+
         ul {
-            list-style-type: '✅ ';
-            padding-left: 20px;
+            list-style: none;
+            padding-left: 0;
         }
-        li {
+
+        ul li {
+            padding-left: 1.5em;
             margin-bottom: 10px;
+            position: relative;
         }
+        
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #fffbe6;
+            border-left: 5px solid #f9ca24;
+            padding: 20px;
+            margin-top: 1.5em;
+            border-radius: 5px;
+        }
+
         .hot-selling {
-            color: #d32f2f;
+            color: var(--accent-color);
             font-weight: bold;
             font-style: italic;
+            background: linear-gradient(90deg, var(--accent-color), #c0392b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .note {
-            background-color: #fff9c4;
-            border-left: 5px solid #fbc02d;
-            padding: 15px;
-            margin-top: 1em;
-        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Your Gateway to the IIT Madras BS Program: A Strategic Guide to Conquering the Qualifier</h1>
+        <h1>Your Gateway to the IIT Madras BS Program</h1>
         
-        <p>Welcome. You're considering a journey with IIT Madras, but before it begins, you must pass the Qualifier Exam. This isn't just a formality—it's a highly competitive filter designed to select only the most prepared candidates. This guide from Unknown IITians will break down the challenge and show you how to overcome it.</p>
+        <p>Welcome. You're considering a journey with IIT Madras, but before it begins, you must pass the Qualifier Exam. This isn't just a formality—it's a highly competitive filter designed to select only the most prepared candidates. This guide from <strong>Unknown IITians</strong> will break down the challenge and show you how to overcome it.</p>
+
+        <hr>
 
         <h2>The Stakes Are High: A Look at the Numbers</h2>
         
-        <p>The data reveals a stark reality: the path to admission is selective. [cite_start]Out of more than 168,000 initial applicants, only <strong>37.42%</strong> successfully qualified for the foundation level[cite: 87]. This isn't just a test; it's a significant academic challenge where preparation is everything.</p>
+        <p>The data reveals a stark reality: the path to admission is selective. Out of more than 168,000 initial applicants, only <strong>37.42%</strong> successfully qualified for the foundation level. This isn't just a test; it's a significant academic challenge where preparation is everything.</p>
 
         <table>
             <thead>
                 <tr>
-                    [cite_start]<th colspan="2">Term-wise Data (Jan 2021 - Jan 2025) [cite: 87]</th>
+                    <th colspan="2">Term-wise Data (Jan 2021 - Jan 2025)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>Total First-Time Applicants</strong></td>
-                    [cite_start]<td>168,740 [cite: 87, 89]</td>
+                    <td>168,740</td>
                 </tr>
                 <tr>
                     <td><strong>Students Who Qualified</strong></td>
-                    [cite_start]<td>63,143 [cite: 87]</td>
+                    <td>63,143</td>
                 </tr>
                 <tr>
                     <td><strong>Students Who Started the Program</strong></td>
-                    [cite_start]<td>52,144 [cite: 87]</td>
+                    <td>52,144</td>
                 </tr>
             </tbody>
         </table>
         
-        [cite_start]<p>The exam is designed to test your precision, depth of understanding, and strategy[cite: 84]. [cite_start]A few small mistakes, especially on high-mark questions, can be the difference between qualifying and being disqualified[cite: 85].</p>
+        <p>The exam is designed to test your precision, depth of understanding, and strategy. A few small mistakes, especially on high-mark questions, can be the difference between qualifying and being disqualified.</p>
 
         <h2>Why is the Qualifier So Difficult?</h2>
         
         <p>The challenge lies in three key areas: a demanding subject mix, a brutal marking scheme, and escalating difficulty.</p>
 
         <h3>1. The Subject Gauntlet</h3>
-        [cite_start]<p>The exam covers four subjects, with three of them being particularly rigorous for those from non-programming or non-mathematical backgrounds[cite: 64].</p>
+        <p>The exam covers four subjects, with three of them being particularly rigorous for those from non-programming or non-mathematical backgrounds.</p>
         <ul>
-            [cite_start]<li>Mathematics: 15-16 questions [cite: 66]</li>
-            [cite_start]<li>Statistics: 15-16 questions [cite: 67]</li>
-            [cite_start]<li>Computational Thinking: 22-25 questions [cite: 68]</li>
-            [cite_start]<li>English: Widely regarded as manageable [cite: 64]</li>
+            <li>Mathematics: 15-16 questions</li>
+            <li>Statistics: 15-16 questions</li>
+            <li>Computational Thinking: 22-25 questions</li>
+            <li>English: Widely regarded as manageable</li>
         </ul>
 
         <h3>2. An Unforgiving Marking Scheme</h3>
-        [cite_start]<p>There is almost no room for error[cite: 76].</p>
+        <p>There is almost no room for error.</p>
         <ul>
-            [cite_start]<li><strong>No credit for partial guesses:</strong> If a question has multiple correct answers and you select one correct and one incorrect option, you get <strong>zero marks</strong>[cite: 78].</li>
-            [cite_start]<li><strong>Limited partial credit:</strong> You only receive partial credit if you select some of the correct options without choosing <em>any</em> wrong ones[cite: 77]. [cite_start]This policy makes guessing a high-risk gamble[cite: 79].</li>
+            <li><strong>No credit for partial guesses:</strong> If a question has multiple correct answers and you select one correct and one incorrect option, you get <strong>zero marks</strong>.</li>
+            <li><strong>Limited partial credit:</strong> You only receive partial credit if you select some of the correct options without choosing <em>any</em> wrong ones. This policy makes guessing a high-risk gamble.</li>
         </ul>
         
         <h3>3. Escalating Difficulty</h3>
-        <p>Be prepared: the challenge increases throughout the year. [cite_start]While the January qualifier is considered more accessible, the <strong>May and September exams are notably more challenging</strong>[cite: 81]. [cite_start]As more students compete, the questions become more conceptual and logic-heavy[cite: 82].</p>
+        <p>Be prepared: the challenge increases throughout the year. While the January qualifier is considered more accessible, the <strong>May and September exams are notably more challenging</strong>. As more students compete, the questions become more conceptual and logic-heavy.</p>
 
         <h2>Your Blueprint for Success: The Qualification Criteria</h2>
         
-        <p>To succeed, you must clear two distinct hurdles. [cite_start]Fail either one, and you're out[cite: 74].</p>
+        <p>To succeed, you must clear two distinct hurdles. Fail either one, and you're out.</p>
 
         <h3>Hurdle 1: Master the Assignments</h3>
-        <p>You must first prove your consistency in coursework. [cite_start]Only students who get the minimum required average assignment score in all four courses can sit for the exam[cite: 4]. [cite_start]This score is calculated from the <strong>best 2 out of the first 3 assignments</strong> in each course[cite: 3].</p>
+        <p>You must first prove your consistency in coursework. Only students who get the minimum required average assignment score in all four courses can sit for the exam. This score is calculated from the <strong>best 2 out of the first 3 assignments</strong> in each course.</p>
         
         <table>
             <thead>
                 <tr>
                     <th>Category</th>
-                    [cite_start]<th>Minimum Average Assignment Score [cite: 5]</th>
+                    <th>Minimum Average Assignment Score</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>General Learner</td>
-                    [cite_start]<td>40% [cite: 5]</td>
+                    <td>40%</td>
                 </tr>
                 <tr>
                     <td>OBC-NCL / EWS</td>
-                    [cite_start]<td>35% [cite: 5]</td>
+                    <td>35%</td>
                 </tr>
                 <tr>
                     <td>SC/ST/PwD (with ≥40% disability)</td>
-                    [cite_start]<td>30% [cite: 5]</td>
+                    <td>30%</td>
                 </tr>
             </tbody>
         </table>
@@ -189,48 +253,50 @@
             <thead>
                 <tr>
                     <th>Category</th>
-                    <th>Min. [cite_start]Score in <strong>Each</strong> Course [cite: 8]</th>
-                    <th>Min. [cite_start]<strong>Overall Average</strong> Score [cite: 8]</th>
+                    <th>Min. Score in <strong>Each</strong> Course</th>
+                    <th>Min. <strong>Overall Average</strong> Score</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>General Learner</td>
-                    [cite_start]<td>40% [cite: 8]</td>
-                    [cite_start]<td>50% [cite: 8]</td>
+                    <td>40%</td>
+                    <td>50%</td>
                 </tr>
                 <tr>
                     <td>OBC-NCL / EWS</td>
-                    [cite_start]<td>35% [cite: 8]</td>
-                    [cite_start]<td>45% [cite: 8]</td>
+                    <td>35%</td>
+                    <td>45%</td>
                 </tr>
                 <tr>
                     <td>SC/ST/PwD (with ≥40% disability)</td>
-                    [cite_start]<td>30% [cite: 8]</td>
-                    [cite_start]<td>40% [cite: 8]</td>
+                    <td>30%</td>
+                    <td>40%</td>
                 </tr>
             </tbody>
         </table>
         
-        [cite_start]<p class="note"><strong>Note:</strong> The relaxed criteria are only for the qualifier process and do not apply once you are in the program[cite: 6, 7].</p>
+        <p class="note"><strong>Note:</strong> The relaxed criteria are only for the qualifier process and do not apply once you are in the program.</p>
 
         <h2>Gain Your Competitive Edge: Specialized Preparation</h2>
         
         <p>Understanding the challenge is the first step. The next is to arm yourself with the right resources.</p>
         
-        [cite_start]<h3>Qualifiers Full Hindi Batch - <span class="hot-selling">Hot Selling !!</span> [cite: 92]</h3>
+        <h3>Qualifiers Full Hindi Batch - <span class="hot-selling">Hot Selling !!</span></h3>
         
-        <p>This is your comprehensive solution to mastering the qualifier material. [cite_start]Join over <strong>500+ premium students</strong> who have already benefited from this focused program[cite: 99].</p>
+        <p>This is your comprehensive solution to mastering the qualifier material. Join over <strong>500+ premium students</strong> who have already benefited from this focused program.</p>
         
         <ul>
-            [cite_start]<li>Daily Live Lectures [cite: 95]</li>
-            [cite_start]<li>Daily Practice Questions [cite: 96]</li>
-            [cite_start]<li>Weekly Doubt Sessions [cite: 97]</li>
+            <li>Daily Live Lectures</li>
+            <li>Daily Practice Questions</li>
+            <li>Weekly Doubt Sessions</li>
         </ul>
         
         <p>Don't leave your success to chance. Secure your spot and get the strategic preparation you need.</p>
         
-        <a href="https://payments.cashfree.com/forms/septemberqualifierbatch" class="button">Enroll in the September Qualifier Batch Now</a>
+        <div class="button-wrapper">
+            <a href="https://payments.cashfree.com/forms/septemberqualifierbatch" class="button">Enroll in the September Qualifier Batch Now</a>
+        </div>
 
     </div>
 
